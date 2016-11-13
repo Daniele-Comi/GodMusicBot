@@ -33,7 +33,7 @@ def handle(msg):
             return
 
         if command == 'song':
-            MyDirectory = os.listdir('F:\\Development\\Python\\Projects')
+            MyDirectory = os.listdir('/opt/app-root/src/project')
             for file in MyDirectory:
                 if file.endswith('.mp3'):
                     os.remove(file)
@@ -50,7 +50,7 @@ def handle(msg):
             }
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 ydl.download(["http://www.youtube.com/watch?v=" + search_results[0]])
-                MyDirectory = os.listdir('F:\\Development\\Python\\Projects')
+                MyDirectory = os.listdir('/opt/app-root/src/project')
                 for file in MyDirectory:
                     if file.endswith('.mp3'):
                         print (file)
